@@ -1,0 +1,109 @@
+    /* General Styles */
+    body {
+        font-family: 'Lobster', cursive;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: linear-gradient(45deg, #c46e71, #cdbbbb, #9a073a);
+        background-size: 400% 400%;
+        animation: gradientBG 8s ease infinite;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    body.dark-mode {
+        background: #121212;
+        color: #e0e0e0;
+        animation: none;
+    }
+    header, footer {
+        width: 100%;
+        color: white;
+        padding: 1rem 2rem;
+        text-align: center;
+        font-size: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s;
+    }
+    header { background-color: #ff6f61; }
+    footer {
+        margin-top: auto;
+        font-size: 1rem;
+    }
+    body.dark-mode header, body.dark-mode footer {
+        background-color: #1e1e1e;
+    }
+    .movie-container, .feature-card {
+        margin: 2rem auto;
+        text-align: center;
+        background: white;
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .movie-container { width: 80%; max-width: 600px; }
+    .features-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 90%;
+        max-width: 1200px;
+    }
+    body.dark-mode .movie-container, body.dark-mode .feature-card {
+        background: #1e1e1e;
+        color: #e0e0e0;
+    }
+    .movie-container input, .movie-container button, .utility-button {
+        padding: 0.7rem;
+        font-size: 1rem;
+        border-radius: 10px;
+        outline: none;
+        transition: background-color 0.3s, color 0.3s, border 0.3s;
+    }
+    .movie-container input {
+        margin-right: 1rem;
+        border: 2px solid #ff6f61;
+    }
+    body.dark-mode .movie-container input {
+        background-color: #333;
+        color: #e0e0e0;
+        border: 2px solid #555;
+    }
+    .movie-container button, .utility-button {
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    .movie-container button { background-color: #ff6f61; }
+    .utility-button {
+        position: fixed;
+        z-index: 1000;
+        top: 20px;
+        right: 20px;
+        background-color: #ff6f61;
+    }
+    .utility-button:hover, body.dark-mode .movie-container button { background-color: #967cff; }
+    #dark-mode-toggle { top: 80px; }
+    .iframe-container {
+        margin-top: 1.5rem;
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
